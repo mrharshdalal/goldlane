@@ -1,0 +1,231 @@
+<!-- header content -->
+<div class="page">
+  <header>
+    <div class="heading">
+      <h1 id="jewellers" style="cursor: pointer">jewellers</h1>
+      <h1 id="live" style="cursor: pointer">.live</h1>
+    </div>
+  </header>
+
+  <section class="section-container">
+    <div class="image-container">
+      <img
+        src="\assets\Girl tries to enter a password on her cell phone.svg"
+        alt="login-and-signup"
+      />
+    </div>
+
+    <section class="signup-container">
+      <div
+        style="
+          background-color: #ffffff;
+          width: 65%;
+          height: 85%;
+          box-shadow: 2%;
+          border-radius: 10px;
+        "
+      >
+        <div id="signup">
+          <h2>Create Account</h2>
+          <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+            {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+          </button> -->
+          
+          <mat-stepper
+            labelPosition="bottom"
+            [linear]="isLinear"
+            #stepper
+          >
+            <mat-step [stepControl]="firstFormGroup" >
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Email ID</ng-template>
+                <ng-template matStepperIcon="circle">
+                  <mat-icon>done</mat-icon>
+                </ng-template>
+                <ng-template matStepLabel>Email ID </ng-template>
+                <!-- <mat-form-field>
+                  <mat-label>Name</mat-label>
+                  <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                </mat-form-field> -->
+                <div class="step1">
+                  <span class="email">
+                    <label>Email ID</label>
+                    <br /><br />
+                    <input class="form-control" placeholder="Enter Email ID" formControlName="firstCtrl" required/>
+                  </span>
+
+                  <span class="password">
+                    <label>Password</label>
+                    <br /><br />
+                    <input
+                      class="form-control"
+                      placeholder="Enter your Password"
+                      type="password"
+                      formControlName="firstCtrl" required
+                    />
+                  </span>
+                  <br /><br />
+                  <span class="button-create-account">
+                    <button matStepperNext mat-raised-button color="primary">
+                      Create Account
+                    </button>
+                  </span>
+
+                  <hr style="margin-right: 10%; margin-top: 20px" />
+                  <span class="button-signup-google">
+                    <button mat-raised-button style="background-color: white">
+                      SignUp with Google
+                    </button>
+                  </span>
+                  <br /><br />
+                  <p>Already have an account? <a href="">Sign In</a></p>
+                </div>
+
+                <!-- <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div> -->
+              </form>
+            </mat-step>
+
+            <mat-step [stepControl]="secondFormGroup" >
+              <ng-template matStepLabel>Mobile No</ng-template>
+              <ng-template matStepperIcon="edit">
+                <mat-icon>done</mat-icon>
+              </ng-template>
+              <form [formGroup]="secondFormGroup">
+                <!-- <mat-form-field>
+                  <mat-label>Address</mat-label>
+                  <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                         required>
+                </mat-form-field> -->
+                <div class="step2">
+                  <span class="password">
+                    <label>Mobile Number*</label>
+                    <br /><br />
+                    <input
+                      class="form-control"
+                      placeholder="Enter your Mobile Number"
+                      type="number"
+                      formControlName="secondCtrl" required
+                    />
+                  </span>
+                  <br /><br />
+                  <span class="button-mobile">
+                    <button mat-raised-button color="primary">
+                      Continue
+                    </button>
+                  </span>
+                  <br /><br />
+                  <p>
+                    By continuing you agree to our Terms of Use and acknowledge
+                    that you have read our Privacy Policy .
+                  </p>
+                </div>
+                <!-- <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div> -->
+              </form>
+            </mat-step>
+
+            <mat-step>
+              
+              <ng-template matStepLabel>OTP</ng-template>
+              <ng-template matStepperIcon="edit">
+                <mat-icon>done</mat-icon>
+              </ng-template>
+              
+              <form>
+                <!-- <mat-form-field>
+                  <mat-label>Address</mat-label>
+                  <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                         required>
+                </mat-form-field> -->
+                <div class="step3">
+                  <label>OTP*</label><br /><br />
+                  <ng-otp-input
+                    (onInputChange)="onOtpChange($event)"
+                    [config]="{ length: 4 }"
+                    
+                  ></ng-otp-input
+                  ><br />
+                  <a href="">Resend OTP</a>
+                  <br /><br />
+                  <span class="button-otp">
+                    <button matStepperNext mat-raised-button color="primary">
+                      Submit OTP
+                    </button>
+                  </span>
+                  <!-- <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div> -->
+                </div>
+              </form>
+            </mat-step>
+
+            <mat-step [formGroup]="fourthFormGroup">
+              <form [formGroup]="fourthFormGroup">
+              <ng-template matStepLabel>Business Name</ng-template>
+              <ng-template matStepperIcon="edit">
+                <mat-icon>done</mat-icon>
+              </ng-template>
+              <!-- <p>You are now done.</p> -->
+              <!-- <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+              </div> -->
+              <div class="step4">
+                <span class="password">
+                  <label>Store/Business Name*</label>
+                  <input
+                    class="form-control"
+                    placeholder="Enter Store/Business Name"
+                    style="margin-top: 22px; padding: 5%"
+                    formControlName="fourthCtrl" required
+                  />
+                </span>
+                <br /><br />
+                <span class="button-finish">
+                  <button mat-raised-button color="primary">Continue</button>
+                </span>
+              </div>
+            </form>
+            </mat-step>
+          </mat-stepper>
+          <!-- <ng-template matStepperIcon="phone">
+            <mat-icon>call_end</mat-icon>
+          </ng-template> -->
+        </div>
+
+        <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+          {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+        </button> -->
+
+        <!-- <div
+          class="step2"
+          *ngIf="second"
+          style="background-color: #ffffff; width: 80%; height: 100%"
+        >
+         
+        </div>
+
+        <div
+          class="step3"
+          *ngIf="third"
+          style="background-color: #ffffff; width: 80%; height: 100%"
+        >
+          
+        </div>
+
+        <div
+          class="step4"
+          *ngIf="fourth"
+          style="background-color: #ffffff; width: 80%; height: 100%"
+        >
+          
+        </div> -->
+      </div>
+    </section>
+  </section>
+</div>

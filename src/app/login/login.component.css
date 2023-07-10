@@ -1,0 +1,316 @@
+/* laptop 
+or
+tablet 
+css */
+
+.page {
+  background-color: #f5f6f8;
+  width: 100%;
+  height: 100%;
+}
+
+/* header styles */
+.heading {
+  display: flex;
+  padding: 2%;
+}
+.heading h1 {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 34px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.heading #jewellers {
+  color: #e9b640;
+}
+.heading #live {
+  color: #3b325f;
+}
+
+/* section display flex style */
+.section-container {
+  display: flex;
+  width: 100%;
+  height: 85%;
+}
+
+/* image-container styling */
+
+.image-container {
+  height: 100%;
+  padding-top: 10%;
+  padding-left: 4%;
+}
+.image-container img {
+  vertical-align: middle;
+  width: 818px;
+  aspect-ratio: auto 818 / 480;
+  height: 500;
+}
+
+/* signup container styling */
+
+.signup-container {
+  height: 100%;
+  width: 100%;
+  padding-left: 8%;
+  border-radius: 10px;
+  border: 1px;
+}
+
+.signup {
+  height: 100%;
+  padding: 5%;
+}
+.step1 input,
+.step2 input,
+.step3 input,
+.step4 input {
+  padding: 4%;
+}
+
+.signup-container h2 {
+  font-family: 'rubik';
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-left: 60px;
+  padding-top: 45px;
+}
+.signup-container button {
+  width: 90%;
+  height: 55px;
+  background-color: #4070f4;
+}
+
+.custom-selected-step {
+  background-color: white;
+  color: #4070F4;
+  
+}
+
+::ng-deep .mat-step-header
+{
+  background: none !important;
+}
+
+::ng-deep .mat-step-header .mat-step-icon {
+  user-select: none;
+  border-color: #4070F4;
+  height: 15px;
+  width: 15px;
+  font-size: 0px;
+  
+
+}
+
+::ng-deep .mat-step-header .mat-step-label {
+  font-family: 'Rubik';
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #606060;
+
+
+}
+
+
+.step1 label {
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  padding-top: 36px;
+  color: rgba(99, 99, 99, 1);
+}
+.step1 p, .step1 a {
+  text-align: center;
+}
+.step2 label {
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-top: 25%;
+  color: rgba(99, 99, 99, 1);
+}
+.step3 label {
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  padding-top: 25%;
+  color: rgba(99, 99, 99, 1);
+}
+
+.step4 label {
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  padding-top: 25%;
+  color: rgba(99, 99, 99, 1);
+}
+
+.step1,
+.step2,
+.step3,
+.step4 {
+  padding-left: 48px;
+}
+
+.form-control {
+  width: 90%;
+}
+
+/* button styling*/
+.button-create-account {
+  width: 366px;
+  height: 55px;
+  border-radius: 10px;
+}
+
+/* CSS rules for screens below 400px */
+
+@media screen and (max-width: 430px) {
+  .page {
+    background-color: #f5f6f8;
+    width: 125%;
+    height: 100%;
+  }
+  /* header styles */
+  .heading {
+    display: flex;
+    padding: 5%;
+  }
+  .heading h1 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 34px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+  .heading #jewellers {
+    color: #e9b640;
+  }
+  .heading #live {
+    color: #3b325f;
+  }
+
+  /* image-container styling */
+
+  .image-container {
+    padding-top: 0%;
+    height: 30%;
+    width: 100%;
+  }
+  .image-container img {
+    width: 80%;
+    height: 100%;
+  }
+  .section-container {
+    display: inline;
+    width: 100%;
+    height: 50%;
+  }
+
+  /* signup container styling */
+
+  .signup-container {
+    height: 70%;
+    width: 100%;
+    padding: 1%;
+    border-radius: 8px;
+    border: 1px;
+  }
+
+  .step-box {
+    height: 90%;
+    width: 97%;
+    padding: 5%;
+  }
+  
+  .step-box p {
+    text-align: center;
+  }
+
+  .signup-container h2 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: left;
+    padding-left: 417px;
+    padding-top: 30px;
+  }
+  .signup-container button {
+    width: 90%;
+    height: 45px;
+    background-color: #4070f4;
+  }
+  
+  .step1 label {
+    padding-top: 2%;
+    font-size: 18px;
+    color: rgba(99, 99, 99, 1);
+  }
+  .step1 p {
+    padding-left: 3%;
+    align-items: ce;
+  }
+  .step2 label {
+    padding-top: 52%;
+    font-size: 18px;
+    color: rgba(99, 99, 99, 1);
+  }
+  .step2 p{
+    color: rgba(99, 99, 99, 1);
+    text-align: center;
+    padding-right: 5%;
+    font-size: small;
+  }
+  .step3 label {
+    padding-top: 52%;
+    font-size: 18px;
+    color: rgba(99, 99, 99, 1);
+  }
+
+  .step4 label {
+    padding-top: 52%;
+    font-size: 20px;
+    color: rgba(99, 99, 99, 1);
+  }
+
+  .step1,
+  .step2,
+  .step3,
+  .step4 {
+    padding-left: 48px;
+  }
+
+  .form-control {
+    width: 90%;
+  }
+
+  /* button styling*/
+  .button-create-account {
+    width: 366px;
+    height: 55px;
+    border-radius: 10px;
+  }
+}

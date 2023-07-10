@@ -1,0 +1,364 @@
+.verification-page {
+  background-color: #f5f6f8;
+  width: 100%;
+  height: 100%;
+  padding: 2%;
+}
+
+.verify-details {
+  display: inline-flex;
+}
+.verify-details img {
+  cursor: pointer;
+  border: 2px;
+}
+.verify-details h2 {
+  margin-left: 15px;
+  margin-top: 15px;
+  font-family: "Rubik";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+mat-progress-bar {
+  margin-right: 10px;
+}
+
+.tab-container {
+  display: flex;
+  width: 85%;
+  padding-top: 2%;
+}
+
+.tab-1 {
+  background-color: white;
+  width: 210px;
+  height: 123px;
+  cursor: pointer;
+}
+.tab-1 img {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 12%;
+  width: 100%;
+  height: 40%;
+}
+
+.tab-1 h4 {
+  width: 100%;
+  padding-top: 5%;
+  text-align: center;
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+
+.tab-2 {
+  margin-left: 18px;
+  background-color: white;
+  width: 210px;
+  height: 123px;
+  cursor: pointer;
+}
+.tab-2 img {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 12%;
+  width: 100%;
+  height: 40%;
+}
+.tab-2 h4 {
+  width: 100%;
+  padding-top: 5%;
+  text-align: center;
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+
+.tab-3 {
+  margin-left: 18px;
+  background-color: white;
+  width: 210px;
+  height: 123px;
+  cursor: pointer;
+}
+.tab-3 img {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 12%;
+  width: 100%;
+  height: 40%;
+}
+.tab-3 h4 {
+  width: 100%;
+  padding-top: 5%;
+  text-align: center;
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+
+.tab-4 {
+  margin-left: 18px;
+  background-color: white;
+  width: 210px;
+  height: 123px;
+  cursor: pointer;
+}
+.tab-4 img {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 12%;
+  width: 100%;
+  height: 40%;
+}
+.tab-4 h4 {
+  width: 100%;
+  padding-top: 5%;
+  text-align: center;
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+
+/* form-store-details styling */
+
+.form-store-details {
+  padding-left: 3%;
+  margin-top: 2%;
+  width: 100%;
+  height: 50%;
+  background-color: white;
+}
+.form-store-details input,
+textarea,
+select {
+  margin-top: 2%;
+  padding: 4%;
+  border-radius: 4px;
+  border: 1px solid rgba(110, 102, 138, 0.2);
+  background: #fff;
+  width: 365px;
+  height: 52px;
+  flex-shrink: 0;
+}
+.form-store-details label {
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-top: 36px;
+  color: rgba(99, 99, 99, 1);
+}
+.form-store-details select {
+  padding: 2%;
+  width: 365.875px;
+  height: 52px;
+  border-radius: 4px;
+  border: 1px solid rgba(99, 99, 99, 1);
+  color: rgba(99, 99, 99, 1);
+}
+.form-store-details p {
+  color: var(--colors-text-color-body-text-tertiary-text, #9f9f9f);
+  font-size: 12px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin-top: 2%;
+}
+.form-store-details button {
+  margin-top: 2%;
+  width: 416px;
+  height: 55px;
+  flex-shrink: 0;
+}
+#jewellers.live {
+  color: var(--colors-text-color-text-primary, #262626);
+  font-size: 18px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* form-owner-identity styling */
+
+.form-owner-identity {
+  padding-left: 3%;
+  margin-top: 2%;
+  width: 100%;
+  height: 73%;
+  background-color: white;
+}
+.form-owner-identity label {
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-top: 36px;
+  color: rgba(99, 99, 99, 1);
+}
+.form-owner-identity input {
+  margin-top: 2%;
+  padding: 4%;
+  border-radius: 4px;
+  border: 1px solid rgba(110, 102, 138, 0.2);
+  background: #fff;
+  width: 365px;
+  height: 52px;
+  flex-shrink: 0;
+}
+#verify-button {
+  display: flex;
+  margin-top: 4px;
+  width: 157px;
+  height: 52px;
+  padding: 4px 8px 4px 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  
+}
+.form-owner-identity p {
+  color: #9f9f9f;
+  font-size: 12px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0px;
+  display: flex;
+  width: 201px;
+  height: 16px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.form-owner-identity button {
+  margin-top: 8%;
+  width: 70%;
+  height: 55px;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+/* form-business-proof styling */
+
+.form-business-proof {
+  padding-left: 3%;
+  margin-top: 2%;
+  width: 100%;
+  height: 75%;
+  background-color: white;
+}
+.form-business-proof label {
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-top: 36px;
+  color: rgba(99, 99, 99, 1);
+}
+.form-business-proof input, select {
+  margin-top: 2%;
+  padding: 3%;
+  border-radius: 4px;
+  border: 1px solid rgba(110, 102, 138, 0.2);
+  background: #fff;
+  width: 365px;
+  height: 52px;
+  flex-shrink: 0;
+}
+.form-business-proof p {
+  color: #9f9f9f;
+  font-size: 12px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0px;
+  display: flex;
+  width: 201px;
+  height: 16px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.form-business-proof button {
+  margin-top: 2%;
+  width: 416px;
+  height: 55px;
+  flex-shrink: 0;
+}
+
+
+
+
+/* form account details styling */
+.form-bank-details {
+  padding-left: 3%;
+  margin-top: 2%;
+  width: 100%;
+  height: 50%;
+  background-color: white;
+}
+.form-bank-details label {
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-top: 36px;
+  color: rgba(99, 99, 99, 1);
+}
+.form-bank-details input {
+  margin-top: 2%;
+  padding: 3%;
+  border-radius: 4px;
+  border: 1px solid rgba(110, 102, 138, 0.2);
+  background: #fff;
+  width: 365px;
+  height: 52px;
+  flex-shrink: 0;
+}
+.form-bank-details p {
+  color: #9f9f9f;
+  font-size: 12px;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0px;
+  display: flex;
+  width: 201px;
+  height: 16px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.form-bank-details button {
+  margin-top: 2%;
+  width: 416px;
+  height: 55px;
+  flex-shrink: 0;
+}
