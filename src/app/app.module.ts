@@ -22,6 +22,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import {NgFor} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatProgressBarModule,
-    MatSelectModule, NgFor
+    MatSelectModule, NgFor, NgbModule
     
   ],
   providers: [],

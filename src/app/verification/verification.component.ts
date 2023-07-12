@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 interface Business {
   value: string;
@@ -22,6 +23,8 @@ export class VerificationComponent {
   ownerIdentity:boolean = false
   businessProof:boolean = false
   bankDetails:boolean = false
+
+  progressbar: number = 0
 
   storeName!:any;
   businessName: string = '';
@@ -49,6 +52,7 @@ export class VerificationComponent {
   moaFile!: any;
   llpFile!: any;
 
+  
   formValues: any = {};
 
   business: Business[] = [
@@ -62,7 +66,16 @@ export class VerificationComponent {
     {value: '3', viewValue: 'Private Limited'},
     {value: '4', viewValue: 'Limited Liability Partnership'},
   ];
+  constructor(public modalService: NgbModal,)
+  {
 
+  }
+  verify(content:any){
+    this.modalService.open(content,{centered:true})
+  }
+  onOtpChange(value:any){
+    console.log(value)
+  }
   onSelectChange() {
     this.formValues = {};
   }
@@ -144,15 +157,16 @@ export class VerificationComponent {
     }
   }
 
+  svgColor = 'url(#pattern0)';
+
   
   
   checkInputValues(value:any) {
     console.log(value.target.value)
     this.areStoreDetailsInputsValid = this.storeName !== "" && this.storeID !== "" && this.businessName !== "" && this.storeAddress !== "";
-    this.isAadhaarNumberValid = this.aadhaarNumber !== ""
-  }
+    this.isAadhaarNumberValid = value.target.value.length === 12;  }
   
-  tab1click(){
+  tab1click(content:any){
     this.onlineStore=true;
     this.ownerIdentity = false;
     this.businessProof = false;
@@ -163,12 +177,19 @@ export class VerificationComponent {
     this.ownerIdentity = true;
     this.businessProof = false;
     this.bankDetails = false;
+
+    this.progressbar += 25;
+    this.svgColor = 'red'; // Update the color value to the desired color
+
   }
   tab3click(){
     this.onlineStore=false;
     this.ownerIdentity = false;
     this.businessProof = true;
     this.bankDetails = false;
+
+    this.progressbar += 25;
+
   }
   tab4click(){
     
@@ -177,6 +198,9 @@ export class VerificationComponent {
     this.ownerIdentity = false;
     this.businessProof = false;
     this.bankDetails = true;
+
+    this.progressbar += 25;
+
   }
 
 

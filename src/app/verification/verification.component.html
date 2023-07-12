@@ -4,11 +4,13 @@
     <h2>Verify Details</h2>
   </div>
 
-  <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+  <br />
+  <p id="progressbar">{{ progressbar }}% complete</p>
+  <mat-progress-bar mode="determinate" [value]="progressbar"></mat-progress-bar>
 
   <div class="tab-container">
-    <span class="tab-1" (click)="tab1click()">
-      <img src="../assets/Online Store.svg" alt="" />
+    <span class="tab-1" (click)="tab1click(continue)">
+      <img src="../assets/Online Store.svg" alt="" />   
       <h4>Store Details</h4>
     </span>
 
@@ -136,6 +138,7 @@
                 [disabled]="!isAadhaarNumberValid"
                 mat-raised-button
                 color="primary"
+                (click)="verify(continue)"
               >
                 Verify
               </button>
@@ -144,7 +147,7 @@
           </div>
           <div class="row"></div>
         </div>
-        
+
         <div class="col-4"></div>
       </div>
       <div class="row">
@@ -157,6 +160,7 @@
             accept="image/*"
             (change)="onFileSelected($event, 'front')"
           />
+          
         </div>
         <div class="col-4">
           <label>Back Side</label>
@@ -253,7 +257,7 @@
         <div class="col-4">
           <label>GSTIN Number</label>
           <br />
-          <input placeholder="" [(ngModel)]="gstNumber" required/>
+          <input placeholder="" [(ngModel)]="gstNumber" required />
           <br />
           <p>Enter GSTIN Number</p>
         </div>
@@ -275,7 +279,7 @@
         <div class="col-4">
           <label>Company PAN Number</label>
           <br />
-          <input placeholder="" [(ngModel)]="companyPanNumber" required/>
+          <input placeholder="" [(ngModel)]="companyPanNumber" required />
         </div>
         <div class="col-4">
           <label>Upload PAN </label>
@@ -352,9 +356,12 @@
         >
           <label>LLP Deed</label>
           <br />
-          <input placeholder="No File Chosen" type="file"
-          accept="image/*"
-          (change)="onFileSelected($event, 'llp')"/>
+          <input
+            placeholder="No File Chosen"
+            type="file"
+            accept="image/*"
+            (change)="onFileSelected($event, 'llp')"
+          />
           <br />
           <p>Formats allowed</p>
         </div>
@@ -421,3 +428,40 @@
     </div>
   </div>
 </div>
+
+<ng-template #continue let-modal>
+  <div class="myModal">
+    <div class="modal-content p-2">
+      <div class="modal-header" style="border: 0; height: 0">
+        <h1 class="modal-title fbold"></h1>
+        <button
+          type="button"
+          class="close closeButton btn"
+          aria-label="Close"
+          (click)="modal.dismiss('Cross click')"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <h1 class="fbold mt-2">Verify Aadhaar Card</h1>
+
+          <p class="warning_text">
+            OTP has been sent to you mobile number. <br />
+            Please enter the OTP for verification
+          </p>
+
+          <ng-otp-input
+            (onInputChange)="onOtpChange($event)"
+            [config]="{ length: 4 }"
+          ></ng-otp-input>
+
+          <button type="button" class="btn pause_btn mt-3">Resend OTP</button>
+          <br>
+          <button mat-raised-button color="primary">Verify</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
