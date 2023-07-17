@@ -140,6 +140,7 @@ export class VerificationComponent {
     console.log(inputId)
     if (inputId === 'front') {
       this.frontFile = null;
+      console.log("removing front file");
     } else if (inputId === 'back') {
       this.backFile = null;
     } else if (inputId === 'pan') {
@@ -166,9 +167,12 @@ export class VerificationComponent {
   onFileSelected(event: any, inputId: string) {
     console.log("here",inputId,event)
     if (inputId === 'front') {
+      console.log(event.target.files);
       const file: File = event.target.files[0];
+
       if (file) {
         this.frontFile = file;
+        console.log(this.frontFile);
       }
     } else if (inputId === 'back') {
       const file: File = event.target.files[0];

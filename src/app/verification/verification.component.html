@@ -163,10 +163,10 @@
            -->
 
           <div class="upload-container">
-            <span *ngIf="!frontFile" class="file-name">No File Chosen</span>
+            <span *ngIf="!frontFile" class="file-name">No File Chosen here</span>
             <span *ngIf="frontFile" class="file-name">{{
               frontFile.name
-            }}</span>
+            }} is front file</span>
               <mat-icon class="delete-icon" *ngIf="frontFile" (click)="removeFile('front')">delete</mat-icon>
             <button mat-button (click)="fileInput.click()" >
               <mat-icon>file_upload</mat-icon> Upload File
@@ -174,7 +174,9 @@
             <input
               type="file"
               #fileInput
+              [ngModel]="frontFile"
               (change)="onFileSelected($event, 'front')"
+
               hidden
             />
           </div>
