@@ -9,8 +9,8 @@
   <mat-progress-bar mode="determinate" [value]="progressbar"></mat-progress-bar>
 
   <div class="tab-container">
-    <span class="tab-1" (click)="tab1click(continue)">
-      <img src="../assets/Online Store.svg" alt="" />   
+    <span class="tab-1">
+      <img src="../assets/Online Store.svg" alt="" />
       <h4>Store Details</h4>
     </span>
 
@@ -19,7 +19,7 @@
       <h4>Owner Identity</h4>
     </span>
 
-    <span class="tab-3" (click)="tab3click()">
+    <span class="tab-3">
       <img src="../assets/Business.svg" alt="" />
       <h4>Business Verification</h4>
     </span>
@@ -34,7 +34,7 @@
     <div id="store-details">
       <div class="row">
         <div class="col">
-          <label>Store Name n</label>
+          <label>Store Name</label>
           <br />
           <input
             type="text"
@@ -154,23 +154,56 @@
         <div class="col-4">
           <label>Front Side</label>
           <br />
-          <input
+          <!-- <input
             type="file"
             placeholder="Upload Image"
             accept="image/*"
             (change)="onFileSelected($event, 'front')"
           />
-          
+           -->
+
+          <div class="upload-container">
+            <span *ngIf="!frontFile" class="file-name">No File Chosen</span>
+            <span *ngIf="frontFile" class="file-name">{{
+              frontFile.name
+            }}</span>
+              <mat-icon class="delete-icon" *ngIf="frontFile" (click)="removeFile('front')">delete</mat-icon>
+            <button mat-button (click)="fileInput.click()" >
+              <mat-icon>file_upload</mat-icon> Upload File
+            </button>
+            <input
+              type="file"
+              #fileInput
+              (change)="onFileSelected($event, 'front')"
+              hidden
+            />
+          </div>
         </div>
         <div class="col-4">
           <label>Back Side</label>
           <br />
-          <input
+          <!-- <input
             type="file"
             placeholder="Upload Image"
             accept="image/*"
             (change)="onFileSelected($event, 'back')"
-          />
+          /> -->
+          <div class="upload-container">
+            <span *ngIf="!backFile" class="file-name">No File Chosen</span>
+            <span *ngIf="backFile" class="file-name">{{
+              backFile.name
+            }}</span>
+              <mat-icon class="delete-icon" *ngIf="backFile" (click)="removeFile('back')">delete</mat-icon>
+            <button mat-button (click)="fileInput2.click()" >
+              <mat-icon>file_upload</mat-icon> Upload File
+            </button>
+            <input
+              type="file"
+              #fileInput2
+              (change)="onFileSelected($event, 'back')"
+              hidden
+            />
+          </div>
         </div>
         <div class="col-4"></div>
       </div>
@@ -195,12 +228,28 @@
         <div class="col-4">
           <label>Upload PAN</label>
           <br />
-          <input
+          <!-- <input
             type="file"
             placeholder="Upload PAN"
             accept="image/*"
             (change)="onFileSelected($event, 'pan')"
-          />
+          /> -->
+          <div class="upload-container">
+            <span *ngIf="!panUpload" class="file-name">No File Chosen</span>
+            <span *ngIf="panUpload" class="file-name">{{
+              panUpload.name
+            }}</span>
+              <mat-icon class="delete-icon" *ngIf="panUpload" (click)="removeFile('pan')">delete</mat-icon>
+            <button mat-button (click)="fileInput3.click()" >
+              <mat-icon>file_upload</mat-icon> Upload File
+            </button>
+            <input
+              type="file"
+              #fileInput3
+              (change)="onFileSelected($event, 'pan')"
+              hidden
+            />
+          </div>
         </div>
         <div class="col-4"></div>
         <div class="col-4"></div>
@@ -264,12 +313,28 @@
         <div class="col-4">
           <label>Upload GST Certificate</label>
           <br />
-          <input
+          <!-- <input
             placeholder="No File Chosen"
             type="file"
             accept="image/*"
             (change)="onFileSelected($event, 'gst')"
-          />
+          /> -->
+          <div class="upload-container">
+            <span *ngIf="!gstFile" class="file-name">No File Chosen</span>
+            <span *ngIf="gstFile" class="file-name">{{
+              gstFile.name
+            }}</span>
+              <mat-icon class="delete-icon" *ngIf="gstFile" (click)="removeFile('gst')">delete</mat-icon>
+            <button mat-button (click)="fileInput4.click()" >
+              <mat-icon>file_upload</mat-icon> Upload File
+            </button>
+            <input
+              type="file"
+              #fileInput4
+              (change)="onFileSelected($event, 'gst')"
+              hidden
+            />
+          </div>
           <br />
           <p>Formats Allowed .png</p>
         </div>
@@ -284,12 +349,28 @@
         <div class="col-4">
           <label>Upload PAN </label>
           <br />
-          <input
+          <!-- <input
             placeholder="No File Chosen"
             type="file"
             accept="image/*"
             (change)="onFileSelected($event, 'companyPan')"
-          />
+          /> -->
+          <div class="upload-container">
+            <span *ngIf="!companyPan" class="file-name">No File Chosen</span>
+            <span *ngIf="companyPan" class="file-name">{{
+              companyPan.name
+            }}</span>
+              <mat-icon class="delete-icon" *ngIf="companyPan" (click)="removeFile('companyPan')">delete</mat-icon>
+            <button mat-button (click)="fileInput5.click()" >
+              <mat-icon>file_upload</mat-icon> Upload File
+            </button>
+            <input
+              type="file"
+              #fileInput5
+              (change)="onFileSelected($event, 'companyPan')"
+              hidden
+            />
+          </div>
         </div>
         <div class="col-sm"></div>
       </div>
@@ -297,24 +378,56 @@
         <div class="col-4">
           <label>Upload Hallmark License</label>
           <br />
-          <input
+          <!-- <input
             placeholder="No File Chosen"
             type="file"
             accept="image/*"
             (change)="onFileSelected($event, 'hallmark')"
-          />
+          /> -->
+          <div class="upload-container">
+            <span *ngIf="!hallmarkFile" class="file-name">No File Chosen</span>
+            <span *ngIf="hallmarkFile" class="file-name">{{
+              hallmarkFile.name
+            }}</span>
+              <mat-icon class="delete-icon" *ngIf="hallmarkFile" (click)="removeFile('hallmark')">delete</mat-icon>
+            <button mat-button (click)="fileInput6.click()" >
+              <mat-icon>file_upload</mat-icon> Upload File
+            </button>
+            <input
+              type="file"
+              #fileInput6
+              (change)="onFileSelected($event, 'hallmark')"
+              hidden
+            />
+          </div>
           <br />
           <p>Formats allowed</p>
         </div>
         <div *ngIf="selectedValue == 'Partnership'" class="col-4">
           <label>Upload Parternship Deed</label>
           <br />
-          <input
+          <!-- <input
             placeholder="No File Chosen"
             type="file"
             accept="image/*"
             (change)="onFileSelected($event, 'partnership')"
-          />
+          /> -->
+          <div class="upload-container">
+            <span *ngIf="!partnershipFile" class="file-name">No File Chosen</span>
+            <span *ngIf="partnershipFile" class="file-name">{{
+              partnershipFile.name
+            }}</span>
+              <mat-icon class="delete-icon" *ngIf="partnershipFile" (click)="removeFile('partnership')">delete</mat-icon>
+            <button mat-button (click)="fileInput7.click()" >
+              <mat-icon>file_upload</mat-icon> Upload File
+            </button>
+            <input
+              type="file"
+              #fileInput7
+              (change)="onFileSelected($event, 'partnership')"
+              hidden
+            />
+          </div>
           <br />
           <p>Formats allowed</p>
         </div>
@@ -327,12 +440,28 @@
         >
           <label>Upload Certificate of Incorporation(COI)</label>
           <br />
-          <input
+          <!-- <input
             placeholder="No File Chosen"
             type="file"
             accept="image/*"
             (change)="onFileSelected($event, 'coi')"
-          />
+          /> -->
+          <div class="upload-container">
+            <span *ngIf="!coiFile" class="file-name">No File Chosen</span>
+            <span *ngIf="coiFile" class="file-name">{{
+              coiFile.name
+            }}</span>
+              <mat-icon class="delete-icon" *ngIf="coiFile" (click)="removeFile('coi')">delete</mat-icon>
+            <button mat-button (click)="fileInput8.click()" >
+              <mat-icon>file_upload</mat-icon> Upload File
+            </button>
+            <input
+              type="file"
+              #fileInput8
+              (change)="onFileSelected($event, 'coi')"
+              hidden
+            />
+          </div>
           <br />
           <p>Formats allowed</p>
         </div>
@@ -341,12 +470,28 @@
         <div *ngIf="selectedValue == 'Private Limited'" class="col-4">
           <label>Memorandum of Association (MoA)</label>
           <br />
-          <input
+          <!-- <input
             placeholder="No File Chosen"
             type="file"
             accept="image/*"
             (change)="onFileSelected($event, 'moa')"
-          />
+          /> -->
+          <div class="upload-container">
+            <span *ngIf="!moaFile" class="file-name">No File Chosen</span>
+            <span *ngIf="moaFile" class="file-name">{{
+              moaFile.name
+            }}</span>
+              <mat-icon class="delete-icon" *ngIf="moaFile" (click)="removeFile('moa')">delete</mat-icon>
+            <button mat-button (click)="fileInput9.click()" >
+              <mat-icon>file_upload</mat-icon> Upload File
+            </button>
+            <input
+              type="file"
+              #fileInput9
+              (change)="onFileSelected($event, 'moa')"
+              hidden
+            />
+          </div>
           <br />
           <p>Formats allowed</p>
         </div>
@@ -356,12 +501,28 @@
         >
           <label>LLP Deed</label>
           <br />
-          <input
+          <!-- <input
             placeholder="No File Chosen"
             type="file"
             accept="image/*"
             (change)="onFileSelected($event, 'llp')"
-          />
+          /> -->
+          <div class="upload-container">
+            <span *ngIf="!llpFile" class="file-name">No File Chosen</span>
+            <span *ngIf="llpFile" class="file-name">{{
+              llpFile.name
+            }}</span>
+              <mat-icon class="delete-icon" *ngIf="llpFile" (click)="removeFile('llp')">delete</mat-icon>
+            <button mat-button (click)="fileInput10.click()" >
+              <mat-icon>file_upload</mat-icon> Upload File
+            </button>
+            <input
+              type="file"
+              #fileInput10
+              (change)="onFileSelected($event, 'llp')"
+              hidden
+            />
+          </div>
           <br />
           <p>Formats allowed</p>
         </div>
@@ -392,7 +553,7 @@
         <div class="col-4">
           <label>Account Number</label>
           <br />
-          <input placeholder="Enter Account Number" />
+          <input placeholder="Enter Account Number" [(ngModel)]="accountNumber" required />
         </div>
       </div>
       <div class="row">
@@ -407,7 +568,23 @@
         <div class="col-4">
           <label>Upload Statement/Cancelled Cheque</label>
           <br />
-          <input placeholder="No File Chosen" />
+          <!-- <input placeholder="No File Chosen" /> -->
+          <div class="upload-container">
+            <span *ngIf="!chequeFile" class="file-name">No File Chosen</span>
+            <span *ngIf="chequeFile" class="file-name">{{
+              chequeFile.name
+            }}</span>
+              <mat-icon class="delete-icon" *ngIf="chequeFile" (click)="removeFile('cheque')">delete</mat-icon>
+            <button mat-button (click)="fileInput11.click()" >
+              <mat-icon>file_upload</mat-icon> Upload File
+            </button>
+            <input
+              type="file"
+              #fileInput11
+              (change)="onFileSelected($event, 'cheque')"
+              hidden
+            />
+          </div>
           <p>Formats Allowed .png</p>
         </div>
       </div>
@@ -458,7 +635,7 @@
           ></ng-otp-input>
 
           <button type="button" class="btn pause_btn mt-3">Resend OTP</button>
-          <br>
+          <br />
           <button mat-raised-button color="primary">Verify</button>
         </div>
       </div>

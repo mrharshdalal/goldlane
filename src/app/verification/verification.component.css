@@ -41,7 +41,7 @@ mat-progress-bar {
   padding-top: 2%;
 }
 .svg path {
-  fill: blue!important;
+  fill: blue !important;
 }
 
 .tab-1 {
@@ -370,4 +370,50 @@ select {
   width: 416px;
   height: 55px;
   flex-shrink: 0;
+}
+
+/* upload button container */
+
+.upload-container {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid rgba(159, 159, 159, 1);
+  padding-left: 2%;
+  /* outlin e:0.01em solid black; */
+  border-radius: 5px;
+  width: 67%;
+  height: 40%;
+  justify-content: space-between;
+}
+
+.upload-container button {
+  /* align-items: center;
+  width: 38%;
+  background-color: #3268fb;
+  height: 80%;
+  margin-bottom: 8%; */
+
+  display: flex;
+  width: 39%;
+  height: 80%;
+  padding: 8px 8px 4px 8px;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-bottom: 8%;
+  border-radius: 3px;
+  margin-right: 2%;
+}
+.delete-icon {
+  cursor: pointer;
+  margin-left: 8%;
+}
+
+.file-name {
+  color: var(--colors-text-color-text-secondary, #606060);
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
 }
